@@ -1,0 +1,40 @@
+@import '../../styles/common/variables.less';
+@import './mixin.less';
+
+/**
+* Component:		  Button
+* Description:		按钮用于开始一个即时操作。
+*/
+
+@btn-prefix-cls: ~"@{css-prefix}btn";
+
+@btn-ghost-color: @text-color;
+@btn-ghost-bg: transparent;
+@btn-ghost-border: @border-color-base;
+
+.@{btn-prefix-cls} {
+  .btn;
+  .btn-default;
+
+  // Make sure that the target of Button's click event always be `button`
+  > i,
+  > span {
+    pointer-events: none;
+  }
+
+  &-primary {
+    .btn-primary;
+  }
+
+  &-ghost {
+    .btn-ghost;
+  }
+  
+  &-dashed {
+    .btn-dashed;
+  }
+
+  &-danger {
+    .btn-danger;
+  }
+}

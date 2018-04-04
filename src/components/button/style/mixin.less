@@ -1,0 +1,176 @@
+// mixins for button
+// -----------------------------------------------------------------------------
+.button-size(@height; @padding; @font-size; @border-radius) {
+  padding: @padding;
+  font-size: @font-size;
+  border-radius: @border-radius;
+  height: @height;
+}
+
+.button-disabled() {
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      .button-color(@btn-disable-color; @btn-disable-bg; @btn-disable-border);
+    }
+  }
+}
+
+.button-variant-other(@color; @background; @border) {
+  .button-color(@color; @background; @border);
+
+  &:hover,
+  &:focus {
+    .button-color(@primary-5; @background; @primary-5);
+  }
+
+  &:active,
+  &.active {
+    .button-color(@primary-7; @background; @primary-7);
+  }
+
+  .button-disabled();
+}
+
+.button-color(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  // a inside Button which only work in Chrome
+  // http://stackoverflow.com/a/17253457
+  > a:only-child {
+    color: currentColor;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: transparent;
+    }
+  }
+}
+
+.button-variant-primary(@color; @background) {
+  .button-color(@color; @background; @background);
+  &:hover,
+  &:focus {
+    .button-color(@color; @primary-5; @primary-5);
+  }
+
+  &:active,
+  &.active {
+    .button-color(@color; @primary-7; @primary-7);
+  }
+
+  .button-disabled();
+}
+
+.button-variant-danger(@color; @background; @border) {
+  .button-color(@color; @background; @border);
+
+  &:hover,
+  &:focus {
+    .button-color(@btn-primary-color; @danger-5; @danger-5);
+  }
+
+  &:active,
+  &.active {
+    .button-color(@btn-primary-color; @danger-7; @danger-7);
+  }
+
+  .button-disabled();
+}
+
+.btn() {
+  display: inline-block;
+  font-weight: @btn-font-weight;
+  text-align: center;
+  touch-action: manipulation; // 浏览器只允许进行滚动和持续缩放操作
+  cursor: pointer;
+  background-image: none;
+  border: @border-width-base @border-style-base transparent;
+  white-space: nowrap; // 规定段落中的文本不进行换行
+  .button-size(@btn-height-base; @btn-padding-base; @font-size-base; @btn-border-radius-base);
+  line-height: @line-height-base;
+  user-select: none;
+  transition: all .3s @ease-in-out;
+  position: relative;
+
+  > .@{iconfont-css-prefix} {
+    line-height: 1;
+  }
+
+  &,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &:not([disabled]):hover {
+    text-decoration: none;
+  }
+
+  &:not([disabled]):active {
+    outline: 0;
+    transition: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  &-lg {
+    .button-size(@btn-height-lg; @btn-padding-lg; @btn-font-size-lg; @btn-border-radius-base);
+  }
+
+  &-sm {
+    .button-size(@btn-height-sm; @btn-padding-sm; @btn-font-size-sm; @btn-border-radius-sm);
+  }
+}
+
+// default button style
+// -----------------------------------------------------------------------------
+.btn-default() {
+  .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: #fff;
+  }
+}
+
+// primary button style
+// -----------------------------------------------------------------------------
+.btn-primary() {
+  .button-variant-primary(@btn-primary-color; @btn-primary-bg);
+}
+
+// ghost button style
+// -----------------------------------------------------------------------------
+.btn-ghost() {
+  .button-variant-other(@btn-ghost-color, @btn-ghost-bg, @btn-ghost-border);
+}
+
+// dashed button style
+// -----------------------------------------------------------------------------
+.btn-dashed() {
+  .button-variant-other(@btn-default-color, @btn-default-bg, @btn-default-border);
+  border-style: dashed;
+}
+
+// danger button style
+// -----------------------------------------------------------------------------
+.btn-danger() {
+  .button-variant-danger(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
+}

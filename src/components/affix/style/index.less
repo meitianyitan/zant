@@ -1,0 +1,13 @@
+@import '../../styles/common/variables.less';
+
+/**
+* Component:		  Affix
+* Description:		将页面元素钉在可视范围。
+*/
+
+@affix-prefix-cls: ~"@{css-prefix}affix";
+
+.@{affix-prefix-cls} {
+  position: fixed;
+  z-index: @zindex-affix;
+}
