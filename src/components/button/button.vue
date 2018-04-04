@@ -4,7 +4,7 @@
     :class="classes"
     :disabled="disabled"
     @click="handleClick">
-    <Icon v-if="loading" class="vvu-load-loop" type="load-c"></Icon>
+    <Icon v-if="loading" class="zant-load-loop" type="load-c"></Icon>
     <Icon v-if="icon && !loading" :type="icon"></Icon>
     <span v-if="showSlot" ref="slot"><slot></slot></span>
   </button>
@@ -14,7 +14,7 @@
 import Icon from '../icon';
 import { isContains } from '../../utils/util';
 
-const prefixCls = 'vvu-btn';
+const prefixCls = 'zant-btn';
 
 export default {
   name: 'Button',

@@ -10,7 +10,7 @@
 <script>
   import { on, off } from '../../utils/dom';
   import getScroll from '../../utils/getScroll';
-  const prefixCls = 'vvu-affix';
+  const prefixCls = 'zant-affix';
 
   function getOffset (element, target) {
     // 元素的大小及其相对于视口的位置

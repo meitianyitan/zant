@@ -8,7 +8,7 @@ zant 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面�
 npm install zant --save
 ```
 
-## 示例
+## 全局引入
 
 一般在 webpack 入口页面 main.js 中如下配置：
 
@@ -53,6 +53,12 @@ npm install babel-plugin-import --save-dev
     ["import", { "libraryName": "zant", "libraryDirectory": "src/components", "style": true }]
   ]
 }
+```
+
+由于组件样式是基于less编写的，所以还需安装less和less-loader：
+
+```bash
+npm install less less-loader --save-dev
 ```
 
 最后只需从 zant 引入模块即可，无需单独引入样式：
