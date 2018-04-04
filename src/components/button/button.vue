@@ -12,7 +12,7 @@
 
 <script>
 import Icon from '../icon';
-import { isContains } from '../../utils/util';
+import { oneOf } from '../../utils/util';
 
 const prefixCls = 'zant-btn';
 
@@ -23,22 +23,22 @@ export default {
     htmlType: {
       default: 'button',
       validator (value) {
-        return isContains(value, ['button', 'submit', 'reset']);
+        return oneOf(value, ['button', 'submit', 'reset']);
       }
     },
     type: {
       validator (value) {
-        return isContains(value, ['primary', 'ghost', 'dashed', 'danger', 'info', 'success', 'warning', 'error', 'default']);
+        return oneOf(value, ['primary', 'ghost', 'dashed', 'danger', 'info', 'success', 'warning', 'error', 'default']);
       }
     },
     shape: {
       validator (value) {
-        return isContains(value, ['circle', 'circle-outline']);
+        return oneOf(value, ['circle', 'circle-outline']);
       }
     },
     size: {
       validator (value) {
-        return isContains(value, ['default', 'small', 'large']);
+        return oneOf(value, ['default', 'small', 'large']);
       }
     },
     long: {

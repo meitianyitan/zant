@@ -4,12 +4,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
-import Zant from '../src/index';
+
+// 完整引入 Zant
+// import Zant from '../src/index';
 // import locale from '../src/locale/lang/en-US';
-import locale from '../src/locale/lang/zh-CN';
+// import locale from '../src/locale/lang/zh-CN';
+
+// Vue.use(Zant, { locale });
 
 Vue.use(VueRouter);
-Vue.use(Zant, { locale });
 
 // 开启debug模式
 Vue.config.debug = true;
@@ -23,6 +26,9 @@ const router = new VueRouter({
   }, {
     path: '/button',
     component: (resolve) => require(['./routers/button.vue'], resolve)
+  }, {
+    path: '/grid',
+    component: (resolve) => require(['./routers/grid.vue'], resolve)
   }, {
     path: '/icon',
     component: (resolve) => require(['./routers/icon.vue'], resolve)

@@ -17,7 +17,9 @@
   </div>
 </template>
 <script>
+  import Affix from '../../src/components/affix/index'
   export default {
+    components: { Affix },
     data() {
       return {
         arr: []

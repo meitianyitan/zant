@@ -1,16 +1,20 @@
 import Affix from './components/affix';
 import Button from './components/button';
+import { Row, Col } from './components/grid';
 import Icon from './components/icon';
 import locale from './locale/index';
 
 const components = {
   Affix,
   Button,
+  Col,
+  Row,
   Icon
 };
 
 const zant = {
-  ...components
+  ...components,
+  iCol: Col,
 };
 
 const install = function (Vue, opts = {}) {
