@@ -2,7 +2,7 @@
   "name": "zant",
   "version": "0.0.1",
   "title": "zant",
-  "description": "zant 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面的中后台产品。",
+  "description": "A Vue.js 2.0 UI Toolkit for Web.",
   "keywords": [
     "zant",
     "vue",

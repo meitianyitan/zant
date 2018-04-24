@@ -1,29 +1,34 @@
 # zant
 
-zant 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面的中后台产品。
+A Vue.js 2.0 UI Toolkit for Web.
 
-## 安装
+[中文 README](./README-zh_CN.md)
+
+## install
 
 ```bash
 npm install zant --save
 ```
 
-## 全局引入
+## import zant 
 
-一般在 webpack 入口页面 main.js 中如下配置：
+You can import zant entirely, or just import what you need. Let's start with fully import.
+
+### Fully import
+import zant in the entry file (main.js as usual) of webpack:
 
 ```js
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from 'components/app.vue';
 import Routers from './router.js';
-import Zant from 'zant'; // 全局引入 zant 核心库
-import 'zant/dist/zant.css'; // 全局引入需要单独导入样式
+import Zant from 'zant'; // imports zant entirely
+import 'zant/dist/zant.css'; // imports zant entirely. Note that CSS file needs to be imported separately.
 
 Vue.use(VueRouter);
 Vue.use(Zant);
 
-// 路由配置
+// The routing configuration
 const RouterConfig = {
   routes: Routers
 };
@@ -37,15 +42,19 @@ new Vue({
 });
 ```
 
-## 按需加载
+The above imports zant entirely. Note that CSS file needs to be imported separately.
 
-借助插件[babel-plugin-import](https://github.com/ant-design/babel-plugin-import)可以实现按需加载组件，以便减少文件体积。首先安装babel-plugin-import：
+## import on demand(Recommended)
+
+With the help of [babel-plugin-import](https://github.com/ant-design/babel-plugin-import), we can import components we actually need, making the project smaller than otherwise.
+
+First, install babel-plugin-component:
 
 ```bash
 npm install babel-plugin-import --save-dev
 ```
 
-然后在 .babelrc 文件中配置如下代码：
+Edit .webpackrc to integrate babel-plugin-import.
 
 ```bash
 {
@@ -55,22 +64,22 @@ npm install babel-plugin-import --save-dev
 }
 ```
 
-由于组件样式是基于less编写的，所以还需安装less和less-loader：
+Since component styles are written in less, you need to install less and less-loader, which helps to customize the theme.
 
 ```bash
 npm install less less-loader --save-dev
 ```
 
-最后只需从 zant 引入模块即可，无需单独引入样式：
+Finally, you only need to import modules from zant, so you don't need to introduce styles separately.
 
 ```js
-// babel-plugin-import 会帮助你加载 JS 和 CSS
+// babel-plugin-import will help you to load JS and CSS
 import { Affix } from 'zant';
 ```
 
-上面的方式等同于下面手动引入的方式：
+The above way is equivalent to the manual way introduced below.
 
 ```js
-import Affix from 'zant/src/components/affix';  // 加载 JS
-import 'zant/src/components/affix/style';        // 加载 LESS
+import Affix from 'zant/src/components/affix';  // load JS
+import 'zant/src/components/affix/style';        // load LESS
 ```
