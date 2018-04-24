@@ -43,12 +43,16 @@ module.exports = {
     }, {
       test: /\.less$/,
       use: [
-        'style-loader',
-        'css-loader',
         {
-          loader: require.resolve('less-loader'),
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader'
+        },
+        {
+          loader: 'less-loader',
           options: {
-            modifyVars: setTheme(),
+            modifyVars: { "@btn-primary-bg": "#1DA57A" },
           },
         }
       ]
