@@ -11,9 +11,8 @@
 </template>
 
 <script>
-import Button from '../../src/components/button/index'
 export default {
-  components: { Button }
+  components: { }
 }
 </script>
 

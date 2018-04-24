@@ -6,11 +6,11 @@ import VueRouter from 'vue-router';
 import App from './app.vue';
 
 // 完整引入 Zant
-// import Zant from '../src/index';
+import Zant from '../src/index';
 // import locale from '../src/locale/lang/en-US';
-// import locale from '../src/locale/lang/zh-CN';
+import locale from '../src/locale/lang/zh-CN';
 
-// Vue.use(Zant, { locale });
+Vue.use(Zant, { locale });
 
 Vue.use(VueRouter);
 
