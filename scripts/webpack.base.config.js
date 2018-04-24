@@ -5,6 +5,8 @@ const path = require('path');
 const webpack = require('webpack');
 const package = require('../package.json');
 
+const setTheme = require('./theme');
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir);
 }
@@ -43,7 +45,12 @@ module.exports = {
       use: [
         'style-loader',
         'css-loader',
-        'less-loader'
+        {
+          loader: require.resolve('less-loader'),
+          options: {
+            modifyVars: setTheme(),
+          },
+        }
       ]
     }, {
       test: /\.scss$/,
