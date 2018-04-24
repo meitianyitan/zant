@@ -4,13 +4,13 @@ A Vue.js 2.0 UI Toolkit for Web.
 
 [中文 README](./README-zh_CN.md)
 
-## install
+## Install
 
 ```bash
 npm install zant --save
 ```
 
-## import zant 
+## Import zant 
 
 You can import zant entirely, or just import what you need. Let's start with fully import.
 
@@ -44,7 +44,7 @@ new Vue({
 
 The above imports zant entirely. Note that CSS file needs to be imported separately.
 
-## import on demand(Recommended)
+## Import on demand(Recommended)
 
 With the help of [babel-plugin-import](https://github.com/ant-design/babel-plugin-import), we can import components we actually need, making the project smaller than otherwise.
 
@@ -54,7 +54,7 @@ First, install babel-plugin-component:
 npm install babel-plugin-import --save-dev
 ```
 
-Edit .webpackrc to integrate babel-plugin-import.
+Edit .babelrc to integrate babel-plugin-import.
 
 ```bash
 {
