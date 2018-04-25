@@ -7,8 +7,22 @@
 @row-prefix-cls          : ~"@{css-prefix}row";
 @col-prefix-cls          : ~"@{css-prefix}col";
 
-// -------- Colors -----------
 @primary-color          : @blue-6;
+
+// Color used by default to control hover and active backgrounds and for
+// alert info backgrounds.
+@primary-1: tint(@primary-color, 90%);  // #e8f4ff
+@primary-2: tint(@primary-color, 70%);  // #badeff
+@primary-3: tint(@primary-color, 52.5%);;  // #91caff
+@primary-4: tint(@primary-color, 35%);  // #69b7ff
+@primary-5: tint(@primary-color, 17.5%); // #40a3ff
+@primary-6: @primary-color;                                 // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: shade(@primary-color, 64.5%);  // #09335b
+@primary-8: shade(@blue, 80.5%);  // #051c32
+@primary-9: @blue-9;  // unused
+@primary-10: @blue-10;  // unused
+
+// -------- Colors -----------
 @info-color             : @blue-6;
 @success-color          : @green-6;
 @processing-color       : @primary-color;
@@ -16,19 +30,6 @@
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;
 @normal-color           : #d9d9d9;
-
-// Color used by default to control hover and active backgrounds and for
-// alert info backgrounds.
-@primary-1: @blue-1;  // replace tint(@primary-color, 90%)
-@primary-2: @blue-2;  // replace tint(@primary-color, 80%)
-@primary-3: @blue-3;  // unused
-@primary-4: @blue-4;  // unused
-@primary-5: @blue-5;  // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
-@primary-6: @primary-color;                                 // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: @blue-7;  // replace shade(@primary-color, 5%)
-@primary-8: @blue-8;  // unused
-@primary-9: @blue-9;  // unused
-@primary-10: @blue-10;  // unused
 
 @danger-5               : @red-5;
 @danger-7               : @red-7;

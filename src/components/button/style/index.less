@@ -3,7 +3,7 @@
 
 /**
 * Component:		  Button
-* Description:		按钮用于开始一个即时操作。
+* Description:		The button is used to start an instant operation.（按钮用于开始一个即时操作。）
 */
 
 @btn-prefix-cls: ~"@{css-prefix}btn";
@@ -15,6 +15,10 @@
 .@{btn-prefix-cls} {
   .btn;
   .btn-default;
+
+  &-long{
+    width: 100%;
+  }
 
   // Make sure that the target of Button's click event always be `button`
   > i,
@@ -32,6 +36,14 @@
   
   &-dashed {
     .btn-dashed;
+  }
+
+  &-text{
+    .btn-text;
+  }
+
+  &-info {
+    .button-color(@info-color; @info-color; @info-color);
   }
 
   &-danger {

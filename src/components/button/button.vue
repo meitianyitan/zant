@@ -19,26 +19,26 @@ const prefixCls = 'zant-btn';
 export default {
   name: 'Button',
   components: { Icon },
-  props: {
+  props: { // validator
+    type: {
+      validator (value) {
+        return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default']);
+      }
+    },
+    size: {
+      validator (value) {
+        return oneOf(value, ['default', 'small', 'large']);
+      }
+    },
     htmlType: {
       default: 'button',
       validator (value) {
         return oneOf(value, ['button', 'submit', 'reset']);
       }
     },
-    type: {
-      validator (value) {
-        return oneOf(value, ['primary', 'ghost', 'dashed', 'danger', 'info', 'success', 'warning', 'error', 'default']);
-      }
-    },
     shape: {
       validator (value) {
         return oneOf(value, ['circle', 'circle-outline']);
-      }
-    },
-    size: {
-      validator (value) {
-        return oneOf(value, ['default', 'small', 'large']);
       }
     },
     long: {
@@ -71,10 +71,12 @@ export default {
   },
   methods: {
     handleClick (event) {
+      // click（点击事件）
       this.$emit('click', event);
     }
   },
   mounted () {
+    // only icon（只有icon）
     this.showSlot = this.$slots.default !== undefined;
   }
 }
