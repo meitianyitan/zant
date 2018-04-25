@@ -7,23 +7,26 @@
 @row-prefix-cls          : ~"@{css-prefix}row";
 @col-prefix-cls          : ~"@{css-prefix}col";
 
-@primary-color          : @blue-6;
-
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: tint(@primary-color, 90%);  // #e8f4ff
-@primary-2: tint(@primary-color, 70%);  // #badeff
-@primary-3: tint(@primary-color, 52.5%);;  // #91caff
-@primary-4: tint(@primary-color, 35%);  // #69b7ff
-@primary-5: tint(@primary-color, 17.5%); // #40a3ff
+@primary-color          : #1890ff;
+@info-color             : #2db7f5;
+
+@primary-1: lighten(@primary-color, 39.7%); // #e2f1ff
+@primary-2: lighten(@primary-color, 31.76%); // #badeff
+@primary-3: lighten(@primary-color, 23.82%); // #91caff
+@primary-4: lighten(@primary-color, 15.88%); // #69b7ff
+@primary-5: lighten(@primary-color, 7.94%); // #40a3ff
 @primary-6: @primary-color;                                 // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: shade(@primary-color, 64.5%);  // #09335b
-@primary-8: shade(@blue, 80.5%);  // #051c32
-@primary-9: @blue-9;  // unused
-@primary-10: @blue-10;  // unused
+@primary-7: darken(@primary-color, 3%); // #0989ff
+@primary-8: darken(@primary-color, 24.5%); // #00509a
+@primary-9: darken(@primary-color, 36.45%); // #00305d
+@primary-10: darken(@primary-color, 40%); // #00274b
 
 // -------- Colors -----------
-@info-color             : @blue-6;
+@info-color-5           : lighten(@info-color, 7.94%);
+@info-color-7           : darken(@info-color, 3%); // #0989ff
+
 @success-color          : @green-6;
 @processing-color       : @primary-color;
 @error-color            : @red-6;

@@ -43,7 +43,19 @@
   }
 
   &-info {
-    .button-color(@info-color; @info-color; @info-color);
+    .button-color(@btn-primary-color; @info-color; @info-color);
+    &:hover,
+    &:focus {
+        .button-color(@btn-primary-color;
+        @info-color-5;
+        @info-color-5);
+    }
+    &:active,
+    &.active {
+        .button-color(@btn-primary-color;
+        @info-color-7;
+        @info-color-7);
+    }
   }
 
   &-danger {
