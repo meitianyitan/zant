@@ -45,17 +45,9 @@
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff,85%);
 @text-color-secondary-dark: fade(#fff, 65%);
-@font-size-base         : 14px;
-@font-size-lg           : @font-size-base + 2px;
-@font-size-sm           : 12px;
 @line-height-base        : 1.5;
 
 @border-radius-base      : 4px;
-@border-radius-sm        : 2px;
-
-@font-size-base          : 14px;
-@font-size-lg            : @font-size-base + 2px;
-@font-size-sm            : 12px;
 
 // Border color
 // -----------------------------------------------------------------------------
@@ -99,15 +91,17 @@
 // -----------------------------------------------------------------------------
 @padding-lg              : 24px; // containers
 @padding-md              : 16px; // small containers and buttons
-@padding-sm              : 12px; // Form controls and items
 @padding-xs              : 8px;  // small items
 
 // Button
 @btn-border-width        : 1px;
 
-@btn-font-weight         : 400;
+@btn-font-weight         : normal;
+@btn-border-radius       : 4px;
+@btn-border-radius-small : 3px;
+@btn-group-border        : shade(@primary-color, 5%);
 @btn-border-radius-base  : @border-radius-base;
-@btn-border-radius-sm    : @border-radius-base;
+@btn-border-radius-small : @border-radius-base;
 
 @btn-primary-color       : #fff;
 
@@ -125,12 +119,18 @@
 @btn-disable-color       : @disabled-color;
 @btn-disable-border      : @border-color-base;
 
-@btn-padding-base        : 0 @padding-md - 1px;
-@btn-font-size-lg        : @font-size-lg;
-@btn-font-size-sm        : @font-size-base;
-@btn-padding-lg          : @btn-padding-base;
-@btn-padding-sm          : 0 @padding-xs - 1px;
+@btn-font-size-small     : 12px;
+@btn-font-size           : 14px;
+@btn-font-size-large     : 16px;
 
+@btn-padding-base        : 0 @padding-md - 1px;
+@btn-padding-large       : @btn-padding-base;
+@btn-padding-small       : 0 @padding-xs - 1px;
+
+@btn-height-small        : 24px;
 @btn-height-base         : 32px;
-@btn-height-lg           : 40px;
-@btn-height-sm           : 24px;
+@btn-height-large        : 40px;
+
+@btn-circle-size-small   : 24px;
+@btn-circle-size         : 32px;
+@btn-circle-size-large   : 40px;

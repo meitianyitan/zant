@@ -1,2 +1,23 @@
+.size(@width; @height) {
+    width: @width;
+    height: @height;
+}
+
+.square(@size) {
+    .size(@size; @size);
+}
+
+// Loading for loop
+.zant-load-loop {
+    animation: ani-load-loop 1s linear infinite;
+}
+
+@keyframes ani-load-loop {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+}
+
+
 @import "./button.less";
 @import "./layout.less";
