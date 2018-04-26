@@ -87,12 +87,6 @@
 // ICONFONT
 @iconfont-css-prefix     : zant-icon;
 
-// vertical paddings
-// -----------------------------------------------------------------------------
-@padding-lg              : 24px; // containers
-@padding-md              : 16px; // small containers and buttons
-@padding-xs              : 8px;  // small items
-
 // Button
 @btn-border-width        : 1px;
 
@@ -104,6 +98,7 @@
 @btn-border-radius-small : @border-radius-base;
 
 @btn-primary-color       : #fff;
+@btn-ghost-color         : @text-color;
 
 @btn-default-bg          : #fff;
 @btn-primary-bg          : @primary-color;
@@ -112,6 +107,9 @@
 @btn-warning-bg          : @warning-color;
 @btn-error-bg            : @error-color;
 @btn-disable-bg          : @disabled-bg;
+@btn-ghost-bg            : transparent;
+
+@btn-ghost-border        : @border-color-base;
 
 @btn-default-color       : @text-color;
 @btn-default-border      : @border-color-base;
@@ -123,9 +121,9 @@
 @btn-font-size           : 14px;
 @btn-font-size-large     : 16px;
 
-@btn-padding-base        : 0 @padding-md - 1px;
-@btn-padding-large       : @btn-padding-base;
-@btn-padding-small       : 0 @padding-xs - 1px;
+@btn-padding-base        : 0 16px;
+@btn-padding-large       : 0 24px;
+@btn-padding-small       : 0 8px;
 
 @btn-height-small        : 24px;
 @btn-height-base         : 32px;
