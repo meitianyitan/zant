@@ -71,31 +71,11 @@
 // for tabindex
 .active-btn-color(@color) {
     &:focus {
-      box-shadow: 0 0 0 2px fade(@color, 20%);
+        box-shadow: 0 0 0 2px fade(@color, 20%);
     }
 }
 
-.button-variant-primary(@color;
-@background) {
-    .button-color(@color;
-    @background;
-    @background);
-    &:hover,
-    &:focus {
-        .button-color(@color;
-        @primary-5;
-        @primary-5);
-    }
-    &:active,
-    &.active {
-        .button-color(@color;
-        @primary-7;
-        @primary-7);
-    }
-    .button-disabled();
-}
-
-.button-variant-danger(@color;
+.button-variant(@color;
 @background;
 @border) {
     .button-color(@color;
@@ -104,14 +84,14 @@
     &:hover,
     &:focus {
         .button-color(@btn-primary-color;
-        @danger-5;
-        @danger-5);
+        lighten(@background, 7.94%);
+        lighten(@border, 7.94%));
     }
     &:active,
     &.active {
         .button-color(@btn-primary-color;
-        @danger-7;
-        @danger-7);
+        darken(@background, 3%);
+        darken(@border, 3%));
     }
     .button-disabled();
 }
@@ -123,7 +103,7 @@
     touch-action: manipulation; // Browsers only allow scrolling and continuous zooming operations.（浏览器只允许进行滚动和持续缩放操作）
     cursor: pointer;
     background-image: none;
-    border: @border-width-base @border-style-base transparent;
+    border: @btn-border-width @border-style-base transparent;
     white-space: nowrap; // nowrap(规定段落中的文本不进行换行)
     .button-size(@btn-height-base;
     @btn-padding-base;
@@ -186,7 +166,8 @@
 // primary button style
 // -----------------------------------------------------------------------------
 .btn-primary() {
-    .button-variant-primary(@btn-primary-color;
+    .button-variant(@btn-primary-color;
+    @btn-primary-bg;
     @btn-primary-bg);
 }
 
@@ -232,20 +213,40 @@
         transparent);
     }
     &:focus {
-      .button-color(@primary-5;
-      transparent;
-      transparent);
+        .button-color(@primary-5;
+        transparent;
+        transparent);
     }
 }
 
 // info button style
 // -----------------------------------------------------------------------------
 .btn-info() {
-
+    .button-variant(@btn-primary-color;
+    @btn-info-bg;
+    @btn-info-bg);
 }
 
-// danger button style
+// success button style
 // -----------------------------------------------------------------------------
-.btn-danger() {
-  .button-variant-danger(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
+.btn-success() {
+    .button-variant(@btn-primary-color;
+    @btn-success-bg;
+    @btn-success-bg);
+}
+
+// warning button style
+// -----------------------------------------------------------------------------
+.btn-warning() {
+    .button-variant(@btn-primary-color;
+    @btn-warning-bg;
+    @btn-warning-bg);
+}
+
+// error button style
+// -----------------------------------------------------------------------------
+.btn-error() {
+    .button-variant(@btn-primary-color;
+    @btn-error-bg;
+    @btn-error-bg);
 }

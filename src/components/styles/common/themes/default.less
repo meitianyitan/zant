@@ -9,8 +9,7 @@
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-color          : #1890ff;
-@info-color             : #2db7f5;
+
 
 @primary-1: lighten(@primary-color, 39.7%); // #e2f1ff
 @primary-2: lighten(@primary-color, 31.76%); // #badeff
@@ -24,18 +23,15 @@
 @primary-10: darken(@primary-color, 40%); // #00274b
 
 // -------- Colors -----------
-@info-color-5           : lighten(@info-color, 7.94%);
-@info-color-7           : darken(@info-color, 3%); // #0989ff
+@primary-color          : #2d8cf0;
+@info-color             : #2db7f5;
+@success-color          : #19be6b;
+@warning-color          : #f90;
+@error-color            : #ed3f14;
 
-@success-color          : @green-6;
 @processing-color       : @primary-color;
-@error-color            : @red-6;
 @highlight-color        : @red-6;
-@warning-color          : @gold-6;
 @normal-color           : #d9d9d9;
-
-@danger-5               : @red-5;
-@danger-7               : @red-7;
 
 // Base
 // -----------------------------------------------------------------------------
@@ -107,24 +103,27 @@
 @padding-xs              : 8px;  // small items
 
 // Button
+@btn-border-width        : 1px;
+
 @btn-font-weight         : 400;
 @btn-border-radius-base  : @border-radius-base;
 @btn-border-radius-sm    : @border-radius-base;
 
-@btn-primary-color      : #fff;
-@btn-primary-bg         : @primary-color;
+@btn-primary-color       : #fff;
+
+@btn-default-bg          : #fff;
+@btn-primary-bg          : @primary-color;
+@btn-info-bg             : @info-color;
+@btn-success-bg          : @success-color;
+@btn-warning-bg          : @warning-color;
+@btn-error-bg            : @error-color;
+@btn-disable-bg          : @disabled-bg;
 
 @btn-default-color       : @text-color;
-@btn-default-bg          : #fff;
 @btn-default-border      : @border-color-base;
 
-@btn-danger-color       : @error-color;
-@btn-danger-bg          : @background-color-base;
-@btn-danger-border      : @border-color-base;
-
-@btn-disable-color      : @disabled-color;
-@btn-disable-bg         : @disabled-bg;
-@btn-disable-border     : @border-color-base;
+@btn-disable-color       : @disabled-color;
+@btn-disable-border      : @border-color-base;
 
 @btn-padding-base        : 0 @padding-md - 1px;
 @btn-font-size-lg        : @font-size-lg;
