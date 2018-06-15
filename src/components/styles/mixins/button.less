@@ -1,3 +1,4 @@
+@import "./index.less";
 // mixins for button
 // -----------------------------------------------------------------------------
 .button-size(@height;
@@ -67,6 +68,34 @@
     }
 }
 
+// Circle for Icon
+.btn-circle(@btnClassName: zant-btn) {
+    border-radius: @btn-circle-size;
+
+    &.@{btnClassName}-large{
+        border-radius: @btn-circle-size-large;
+    }
+
+    &.@{btnClassName}-size{
+        border-radius: @btn-circle-size-small;
+    }
+
+    &.@{btnClassName}-icon-only{
+        .square(@btn-circle-size);
+        .button-size(@btn-height-base; 0; @btn-font-size; 50%);
+
+        &.@{btnClassName}-large{
+            .square(@btn-circle-size-large);
+            .button-size(@btn-height-large; 0; @btn-font-size-large; 50%);
+        }
+
+        &.@{btnClassName}-small{
+            .square(@btn-circle-size-small);
+            .button-size(@btn-height-small; 0; @btn-font-size-small; 50%);
+        }
+    }
+}
+
 // Color
 // for tabindex
 .active-btn-color(@color) {
@@ -107,7 +136,7 @@
     white-space: nowrap; // nowrap(规定段落中的文本不进行换行)
     .button-size(@btn-height-base;
     @btn-padding-base;
-    @font-size-base;
+    @btn-font-size;
     @btn-border-radius-base);
     line-height: @line-height-base;
     user-select: none;
@@ -135,17 +164,17 @@
             pointer-events: none;
         }
     }
-    &-lg {
-        .button-size(@btn-height-lg;
-        @btn-padding-lg;
-        @btn-font-size-lg;
+    &-large {
+        .button-size(@btn-height-large;
+        @btn-padding-large;
+        @btn-font-size-large;
         @btn-border-radius-base);
     }
-    &-sm {
-        .button-size(@btn-height-sm;
-        @btn-padding-sm;
-        @btn-font-size-sm;
-        @btn-border-radius-sm);
+    &-small {
+        .button-size(@btn-height-small;
+        @btn-padding-small;
+        @btn-font-size-small;
+        @btn-border-radius-small);
     }
 }
 

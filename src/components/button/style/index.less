@@ -1,5 +1,5 @@
-@import '../../styles/common/index.less';
-@import '../../styles/mixins/button.less';
+@import "../../styles/common/index.less";
+@import "../../styles/mixins/button.less";
 
 /**
 * Component:		  Button
@@ -8,16 +8,16 @@
 
 @btn-prefix-cls: ~"@{css-prefix}btn";
 
-@btn-ghost-color: @text-color;
-@btn-ghost-bg: transparent;
-@btn-ghost-border: @border-color-base;
-
 .@{btn-prefix-cls} {
   .btn;
   .btn-default;
 
-  &-long{
+  &-long {
     width: 100%;
+  }
+
+  & > .zant-icon + span, & > span + .zant-icon {
+    margin-left: 4px;
   }
 
   // Make sure that the target of Button's click event always be `button`
@@ -33,12 +33,12 @@
   &-ghost {
     .btn-ghost;
   }
-  
+
   &-dashed {
     .btn-dashed;
   }
 
-  &-text{
+  &-text {
     .btn-text;
   }
 
@@ -56,5 +56,10 @@
 
   &-error {
     .btn-error;
+  }
+
+  &-circle,
+  &-circle-outline {
+    .btn-circle(@btn-prefix-cls);
   }
 }
